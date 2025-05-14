@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "comercial-mafer",
-    "Tienda": "comercial-mafer"
+    "default": "comercial-mafer"
   },
   "targets": {},
   "etags": {}
