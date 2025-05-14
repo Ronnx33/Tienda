@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aseo y Hogar | Mafer's</title>
+  <link rel="stylesheet" href="aseo.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <h1><i class="fa-solid fa-soap"></i> Aseo y Hogar</h1>
+    <p>Todo lo que necesitas para mantener tu casa limpia y reluciente</p>
+  </header>
+
+  <main class="product-grid">
+    <div class="product-card">
+      <img src="img/jabon.png" alt="Jabón líquido">
+      <h3>Jabón Líquido 1L</h3>
+      <p class="price">$2.80</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/cloro.png" alt="Cloro Multiusos">
+      <h3>Cloro Multiusos</h3>
+      <p class="price">$1.90</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/detergente.png" alt="Detergente en Polvo">
+      <h3>Detergente en Polvo 500g</h3>
+      <p class="price">$1.70</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/trapeador.png" alt="Trapeador Reforzado">
+      <h3>Trapeador Reforzado</h3>
+      <p class="price">$3.50</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/escoba.png" alt="Escoba Plástica">
+      <h3>Escoba Plástica</h3>
+      <p class="price">$2.20</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/desinfectante.png" alt="Desinfectante Floral">
+      <h3>Desinfectante Floral</h3>
+      <p class="price">$2.00</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/guantes.png" alt="Guantes de limpieza">
+      <h3>Guantes de Limpieza</h3>
+      <p class="price">$1.30</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/toallas.png" alt="Toallas húmedas">
+      <h3>Toallas Húmedas (x50)</h3>
+      <p class="price">$1.60</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+  </main>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCKge8YEmt9qHUh8BE8ch0Q6vf_hYOtakY",
+    authDomain: "comercial-mafer.firebaseapp.com",
+    projectId: "comercial-mafer",
+    storageBucket: "comercial-mafer.firebasestorage.app",
+    messagingSenderId: "732849265427",
+    appId: "1:732849265427:web:ab3ba28f32c8d044d258e6",
+    measurementId: "G-XHKVD8Y5N6"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

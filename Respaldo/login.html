@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicia Sesión</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="modal-inner-content">
+    <form class="login-form" id="login-form">
+      <h2>Inicia Sesión</h2>
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" placeholder="Ingresa tu email" required />
+
+      <label for="password">Contraseña *</label>
+      <div class="password-wrapper">
+        <input type="password" id="password" placeholder="Ingresa tu contraseña" required />
+      </div>
+
+      <div class="forgot-password">
+        <a href="contraseña.html" class="modal-link">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button type="submit">Iniciar sesión</button>
+
+      <div style="margin: 1em 0; text-align: center;">O</div>
+      <button type="button" id="google-signin">Iniciar con Google</button>
+
+      <p class="register">
+        ¿Aún no tienes cuenta? <a href="cuenta.html" class="modal-link">Crear cuenta</a>
+      </p>
+    </form>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCKge8YEmt9qHUh8BE8ch0Q6vf_hYOtakY",
+      authDomain: "comercial-mafer.firebaseapp.com",
+      projectId: "comercial-mafer",
+      storageBucket: "comercial-mafer.appspot.com",
+      messagingSenderId: "732849265427",
+      appId: "1:732849265427:web:86960381af140f33d258e6",
+      measurementId: "G-F4G16F8SNR"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const form = document.getElementById("login-form");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        alert("Sesión iniciada: " + userCredential.user.email);
+      } catch (error) {
+        alert("Error: " + error.message);
+      }
+    });
+
+    // Inicio de sesión con Google
+    const googleButton = document.getElementById("google-signin");
+    googleButton.addEventListener("click", async () => {
+      const provider = new GoogleAuthProvider();
+
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        alert("Sesión con Google iniciada: " + user.email);
+        // Redirige si quieres: window.location.href = "dashboard.html";
+      } catch (error) {
+        alert("Error con Google: " + error.message);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="contraseña.css">
+</head>
+<body>
+    <div  class="modal-inner-content">
+        <h2>Recuperar Contraseña</h2>
+        <p>Introduce tu correo electrónico para recibir instrucciones sobre cómo recuperar tu contraseña.</p>
+        <form action="recuperar_proceso.php" method="POST">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+            
+            <button type="submit">Enviar enlace de recuperación</button>
+        </form>
+
+        <div class="back-to-login">
+            <a href="login.html" class="modal-link" data-target="login.html">Volver a login</a>
+        </div>
+    </div>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCKge8YEmt9qHUh8BE8ch0Q6vf_hYOtakY",
+    authDomain: "comercial-mafer.firebaseapp.com",
+    projectId: "comercial-mafer",
+    storageBucket: "comercial-mafer.firebasestorage.app",
+    messagingSenderId: "732849265427",
+    appId: "1:732849265427:web:86960381af140f33d258e6",
+    measurementId: "G-F4G16F8SNR"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bebidas | Mafer's</title>
+  <link rel="stylesheet" href="alimentos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <h1><i class="fa-solid fa-bottle-water"></i> Bebidas Refrescantes</h1>
+    <p>Disfruta nuestras mejores ofertas para esta semana</p>
+  </header>
+
+  <main class="product-grid">
+    <div class="product-card">
+      <img src="img/cocacola.png" alt="Coca Cola 1.5L">
+      <h3>Coca Cola 1.5L</h3>
+      <p class="price">$1.80</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/jugo.png" alt="Jugo Hit Mango">
+      <h3>Jugo Hit Mango 1L</h3>
+      <p class="price">$1.20</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/agua.png" alt="Agua Cristal 600ml">
+      <h3>Agua Cristal 600ml</h3>
+      <p class="price">$0.90</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/gatorade.png" alt="Gatorade Uva 500ml">
+      <h3>Gatorade Uva 500ml</h3>
+      <p class="price">$1.50</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/red.png" alt="Red Bull 250ml">
+      <h3>Red Bull 250ml</h3>
+      <p class="price">$2.10</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/te.png" alt="Té Hatsu Durazno">
+      <h3>Té Hatsu Durazno</h3>
+      <p class="price">$1.80</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+        <img src="img/manzana.png" alt="Red Bull 250ml">
+        <h3>Postobón Manzana 1.5L</h3>
+        <p class="price">$2.10</p>
+        <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+      </div>
+  
+      <div class="product-card">
+        <img src="img/pepsi.png" alt="Té Hatsu Durazno">
+        <h3>Pepsi 1.5L</h3>
+        <p class="price">$2.10</p>
+        <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+      </div>
+
+
+  </main>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCKge8YEmt9qHUh8BE8ch0Q6vf_hYOtakY",
+    authDomain: "comercial-mafer.firebaseapp.com",
+    projectId: "comercial-mafer",
+    storageBucket: "comercial-mafer.firebasestorage.app",
+    messagingSenderId: "732849265427",
+    appId: "1:732849265427:web:ab3ba28f32c8d044d258e6",
+    measurementId: "G-XHKVD8Y5N6"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>

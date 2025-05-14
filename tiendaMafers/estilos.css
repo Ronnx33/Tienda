@@ -1,0 +1,712 @@
+/* Sección de banner / carrusel */
+.banner {
+    padding: 2rem;
+    background-color: #e0b672;
+    text-align: center;
+  }
+  
+  .banner h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .product {
+    background-color: #f3f3f3;
+    padding: 1rem;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+  }
+  
+  .product:hover {
+    transform: translateY(-5px);
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin deformarla */
+    max-height: 150px; /* O el alto que desees */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  
+  .product p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  /* Sección de categorías */
+  .categories {
+    padding: 2rem;
+    background-color: #e0b672;
+    text-align: center;
+  }
+  
+  .categories h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+  }
+  
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .category-item {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .category-item:hover {
+    background-color: #e2e2e2;
+  }
+  
+  .category-item i {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .category-item p {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Pie de página */
+  .footer {
+    background-color: #111;
+    color: white;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .footer p {
+    margin-bottom: 1rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .social-icons i {
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons i:hover {
+    color: #ccc;
+  }
+  .main-nav {
+    background-color: #f5deb3;
+    padding: 0.8rem 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-list li a {
+    text-decoration: none;
+    font-size: 0.95rem;
+    color: #444;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-list li a:hover {
+    color: #007BFF;
+  }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+    flex-wrap: nowrap;
+  }
+  
+  .icon-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+  
+  .icon-link i {
+    font-size: 1.1rem;
+  }
+  
+  .icon-link:hover {
+    color: #007BFF;
+  }
+  /* Header superior */
+  .top-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Para que esté por encima del contenido */
+    background-color: white; /* Asegura que tenga fondo */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+  }
+  
+  .header-container {
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  }
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .header-left .logo-img {
+    height: 100px; /* Ajusta esta altura según necesites */
+    width: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+    margin-right: 50px;
+  }
+  
+  .header-left input {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .header-center .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .header-right .icon-group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+  
+  .icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .icon-link i {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .icon-link:hover {
+    color: #007BFF;
+  }
+
+  .carrito {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .producto {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .total {
+    text-align: right;
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .vaciar {
+    margin-top: 10px;
+    text-align: right;
+  }
+  
+  .vaciar button {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+
+  
+
+
+
+
+  /* ============================
+     Sección RESPONSIVE general
+     ============================ */
+     @media (max-width: 1024px) {
+      .product {
+        width: 180px;
+      }
+    
+      .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .banner h2,
+      .categories h2 {
+        font-size: 1.5rem;
+      }
+    
+      .carousel {
+        gap: 1rem;
+        justify-content: center;
+      }
+    
+      .product {
+        width: 160px;
+        padding: 0.8rem;
+      }
+    
+      .product img {
+        height: 130px;
+      }
+    
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+    
+      .category-item {
+        padding: 0.8rem;
+      }
+    
+      .category-item i {
+        font-size: 1.5rem;
+      }
+    
+      .category-item p {
+        font-size: 0.9rem;
+      }
+    
+      .footer {
+        padding: 1rem;
+      }
+    
+      .social-icons {
+        gap: 1rem;
+        font-size: 1.1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .banner {
+        padding: 1.5rem 1rem;
+      }
+    
+      .banner h2,
+      .categories h2 {
+        font-size: 1.3rem;
+      }
+    
+      .carousel {
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .product {
+        width: 90%;
+        max-width: 280px;
+      }
+    
+      .product img {
+        height: 140px;
+      }
+    
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+    
+      .category-item {
+        padding: 1rem;
+      }
+    
+      .category-item i {
+        font-size: 1.8rem;
+      }
+    
+      .footer p {
+        font-size: 0.9rem;
+      }
+    
+      .social-icons {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+    }
+    /* Menú desplegable */
+  .nav-list li {
+    position: relative;
+  }
+  
+  /* Oculta los submenús por defecto */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+  }
+  
+  /* Muestra el submenú solo cuando se pasa el mouse */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdown {
+    position: relative;
+  }
+  
+  
+  /* Estilo de los enlaces del submenú */
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    white-space: nowrap;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+  }
+  .contenido-dinamico {
+    padding: 2rem;
+    background-color: #fdfdfd;
+    min-height: 300px;
+  }
+  
+  .modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    /* resto del código */
+  }
+   
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .modal-content button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  /*
+  ============================================== CARRUCEL DE OFERTAS
+  */
+  .ofertas-semana {
+    text-align: center;
+    background-color: transparent;
+    padding: 40px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .carrusel-container {
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+    margin: 0 auto;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color:transparent;
+  }
+  
+  .carrusel-ofertas {
+    display: flex;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .oferta {
+    flex: 0 0 25%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-decoration: none;
+    height: 270px;
+    transition: transform 0.3s ease;
+  }
+  
+  .oferta:hover {
+    transform: scale(1.05);
+  }
+  
+
+  .oferta img {
+    width: 151pxpx;
+    height: 250px; /* Altura fija para todas */
+    object-fit: cover; /* Ajusta la imagen manteniendo proporciones */
+    object-position: center; /* Enfoca el centro de la imagen */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Opcional: sombra */
+  }
+  /* Indicadores */
+  .indicadores {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .indicadores span {
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    display: inline-block;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .indicadores .activo {
+    background-color: brown;
+  }
+  /*PANTALLA EMERGENTE DE LOGIN*/
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: auto;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #000;
+  }
+  /*CARRRITOO*/
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .carrito {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .producto {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .producto:last-child {
+    border-bottom: none;
+  }
+  
+  .total {
+    text-align: right;
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  .acciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+  }
+  
+  .acciones button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-continuar {
+    background-color: #ccc;
+    color: #000;
+  }
+  
+  .btn-pagar {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .btn-pagar:hover {
+    background-color: #218838;
+  }
+  
+  .btn-continuar:hover {
+    background-color: #b3b3b3;
+  }
+  /*PANELL*/
+  .carrito-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    transition: right 0.4s ease;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .carrito-panel.abierto {
+    right: 0;
+  }
+  
+  .carrito-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .carrito-panel iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+  }
+  
+  .close-btn {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  #carritoPanel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    transition: right 0.5s ease;
+    z-index: 9999;
+    overflow-y: auto;
+  }
+  
+  #carritoPanel.abierto {
+    right: 0;
+  }
+  

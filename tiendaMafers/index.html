@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Mafer's | Tienda Online</title>
+  <link rel="stylesheet" href="estilos.css">
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/11.7.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/11.7.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/11.7.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/11.7.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/11.7.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/11.7.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/11.7.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/11.7.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/11.7.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/11.7.1/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <p id="load">Firebase SDK Loading&hellip;</p>
+    <!-- Encabezado -->
+  <header class="top-header">
+    <div class="header-container">
+      <div class="header-left">
+        <img src="img/logo.png" alt="Logo Mafer's" class="logo-img">
+        <input type="text" placeholder="¿Qué estás buscando?">
+        <i class="fas fa-search"></i>
+      </div>
+  
+      <div class="header-center">
+        <h1 class="logo" style="font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: #6b4226; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">MAFER'S</h1>
+      </div>
+  
+      <div class="header-right">
+        <div class="icon-group">
+          <a href="#" class="icon-link" onclick="openLoginModal()">
+            <i class="fas fa-user"></i>
+            <span>Ingresar</span>
+          </a>          
+          <a href="#" class="icon-link" onclick="toggleCarrito(event)">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Carrito</span>
+          </a>
+          <a href="#" class="icon-link">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ubicación</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+    
+        <li class="dropdown">
+          <a href="#">Productos</a>
+          <ul class="dropdown-menu">
+            <li><a href="snacks.html">Snacks</a></li>
+            <li><a href="bebidas.html">Bebidas</a></li>
+            <li><a href="aseo.html">Limpieza</a></li>
+          </ul>
+        </li>
+    
+    
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="contactos.html">Contacto</a></li>
+      </ul>
+    </nav>
+    <!-- Contenido dinámico -->
+  </header>
+  
+  <div id="dynamic-content"></div>
+  <!-- Carrusel de productos destacados -->
+  <section class="banner">
+    <h2 >Nuevos productos </h2>
+    <div class="carousel">
+      <div class="product"data-name="Cola Nacional 1L" data-price="1.5">
+        <img src="img/Coca.png" alt="Cola">
+        <p>Cola Nacional 1L - $1.50</p>
+      </div>
+      <div class="product" data-name="Cuaderno 100 hojas" data-price="2.5">
+        <img src="img/cuaderno.png" alt="Cuaderno">
+        <p>Cuaderno Raya 100 hojas - $2.00</p>
+      </div>
+      <div class="product" data-name="Lapicero Azul Pack x3" data-price="1.2">
+        <img src="img/lapicero.jpeg" alt="Lapicero">
+        <p>Lapicero Azul Pack x3 - $1.20</p>
+      </div>
+    </div>
+  </section>
+  <section class="ofertas-semana">
+    <h2>¡Ofertas de la semana!</h2>
+    <div class="carrusel-container">
+      <div class="carrusel-ofertas">
+        <!-- Clon de la última imagen (al inicio) -->
+        <a href="oferta5.html" class="oferta"><img src="img/descuento.jpg"alt="Oferta 5"></a>
+  
+        <!-- Imágenes reales -->
+        <a href="oferta1.html" class="oferta"><img src="img/descuento.jpg" alt="Oferta 1"></a>
+        <a href="oferta2.html" class="oferta"><img src="img/Sprite.png" alt="Publicidad1"></a>
+        <a href="oferta3.html" class="oferta"><img src="img/mayonesa.jpg" alt="Oferta 3"></a>
+        <a href="oferta4.html" class="oferta"><img src="img/humitas.jpg" alt="Oferta 4"></a>
+        <a href="oferta5.html" class="oferta"><img src="img/limon.jpg" alt="Oferta 5"></a>
+  
+        <!-- Clon de la primera imagen (al final) -->
+        <a href="oferta1.html" class="oferta"><img src="img/descuento.jpg" alt="Oferta 1"></a>
+      </div>
+    </div>
+    <div class="indicadores">
+      <span class="activo" data-index="0"></span>
+      <span data-index="1"></span>
+      <span data-index="2"></span>
+      <span data-index="3"></span>
+      <span data-index="4"></span>
+    </div>
+  </section>
+  
+  
+  
+  <!-- Categorías -->
+  <section class="categories">
+    <h2>Categorías populares</h2>
+    <div class="category-grid">
+      <div class="category-item">
+        <i class="fas fa-utensils"></i>
+        <p>Bebidas</p>
+      </div>
+      <div class="category-item">
+        <i class="fas fa-book"></i>
+        <p>Librería</p>
+      </div>
+      <div class="category-item">
+        <i class="fas fa-tags"></i>
+        <p>Ofertas</p>
+      </div>
+      <div class="category-item">
+        <i class="fas fa-box-open"></i>
+        <p>Todos los productos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <p>&copy; 2025 Mafer's. Todos los derechos reservados.</p>
+    <div class="social-icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-whatsapp"></i>
+    </div>
+  </footer>
+  
+
+  <!-- Modal para login.html -->
+<div id="loginModal" class="modal">
+  <div class="modal-content" id="loginModalContent">
+    <span class="close" onclick="closeLoginModal()">&times;</span>
+    <!-- Aquí se cargará login.html -->
+  </div>
+</div>
+<script>
+  function openLoginModal() {
+    loadModalContent('login.html');
+  }
+
+  function loadModalContent(url) {
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        const content = document.getElementById('loginModalContent');
+        content.innerHTML = '<span class="close" onclick="closeLoginModal()">&times;</span>' + html;
+
+        // Volver a asignar eventos a los nuevos enlaces internos
+        setTimeout(() => {
+          document.querySelectorAll('.modal-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+              e.preventDefault();
+              const target = this.getAttribute('data-target');
+              loadModalContent(target);
+            });
+          });
+        }, 10);
+
+        document.getElementById('loginModal').style.display = 'block';
+      })
+      .catch(err => console.error('Error cargando modal:', err));
+  }
+
+  function closeLoginModal() {
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('loginModalContent').innerHTML = '<span class="close" onclick="closeLoginModal()">&times;</span>';
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("loginModal");
+    if (event.target == modal) {
+      closeLoginModal();
+    }
+  }
+</script>
+
+
+
+<div id="carritoPanel" class="carrito-panel">
+  <div class="carrito-header">
+    <h2>Carrito</h2>
+    <span class="close-btn" onclick="toggleCarrito()">&times;</span>
+  </div>
+  <iframe id="carritoIframe" src="" frameborder="0"></iframe>
+</div>
+
+<script src="main.js"></script>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+    
+  </body>
+</html>
