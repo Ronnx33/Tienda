@@ -1,0 +1,94 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f2f2f3, #ffffff);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.ubicacion-container {
+  max-width: 900px;
+  width: 90%;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+header h2 {
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #dde6f3;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.mapa-section {
+  margin-bottom: 30px;
+}
+
+.mapa {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.info-contacto {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  color: #333;
+}
+
+.info-item i {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #444;
+}
+
+.info-contacto a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.3s ease;
+}
+
+.info-contacto a:hover {
+  color: #1f8a56;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .ubicacion-container {
+    padding: 25px 20px;
+  }
+
+  .info-item {
+    font-size: 15px;
+  }
+
+  .mapa {
+    height: 300px;
+  }
+
+  header h2 {
+    font-size: 22px;
+  }
+}
