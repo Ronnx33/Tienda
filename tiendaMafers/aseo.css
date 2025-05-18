@@ -6,7 +6,7 @@ body {
   }
   
   .header {
-    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    background: linear-gradient(90deg, #ba86ca, #9f31bb);
     color: white;
     padding: 30px 20px;
     text-align: center;
@@ -62,12 +62,12 @@ body {
   .price {
     font-weight: bold;
     font-size: 1.1rem;
-    color: #27ae60;
+    color: #ba86ca;
     margin-bottom: 12px;
   }
   
   .product-card button {
-    background: #219653;
+    background: #ba86ca;
     color: white;
     border: none;
     padding: 10px 18px;
@@ -78,6 +78,6 @@ body {
   }
   
   .product-card button:hover {
-    background: #1e874b;
+    background: #9f31bb;
   }
   
