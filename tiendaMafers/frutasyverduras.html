@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snacks | Mafer's</title>
+  <link rel="stylesheet" href="frutasyverduras.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <h1><i class="fa-solid fa-carrot"></i></i> Frutas y Verduras</h1>
+    <p>Color, sabor y frescura en cada bocado</p>
+  </header>
+
+  <main class="product-grid">
+    <div class="product-card">
+      <img src="img/tomateriñon.png" alt="Tomate de Riñon ">
+      <h3>Tomate de Riñon</h3>
+      <p class="price">$0.30</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/zanahoria.png" alt="Zanahoria">
+      <h3>Zanahoria</h3>
+      <p class="price">$0.40</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/lechuga.png" alt="Lechuga Crespa">
+      <h3>Lechuga Crespa</h3>
+      <p class="price">$0.70</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/cebolla.jpg" alt="Cebolla Roja">
+      <h3>Cebolla Roja</h3>
+      <p class="price">$0.30</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/pimiento.jpg" alt="Pimiento Verde">
+      <h3>Pimiento Verde</h3>
+      <p class="price">$0.75</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/brocoli.png" alt="Brocoli">
+      <h3>Brocoli</h3>
+      <p class="price">$0.40</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/papachola.png" alt="Papa Chola">
+      <h3>Papa Chola</h3>
+      <p class="price">$0.20</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/pepino.png" alt="Pepino Verde">
+      <h3>Pepino Verde</h3>
+      <p class="price">$0.30</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/col.webp" alt="Col Verde">
+      <h3>Col Verde</h3>
+      <p class="price">$1.00</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/cebollablanca.png" alt="Cebolla Blanca">
+      <h3>Cebolla Blanca</h3>
+      <p class="price">$0.60</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/banano.png" alt="Banano">
+      <h3>Banano</h3>
+      <p class="price">$0.30</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/naranja.jpg" alt="Naranja">
+      <h3>Naranja</h3>
+      <p class="price">$0.30</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/manzanaroja.png" alt="Manzana Roja">
+      <h3>Manzana Roja</h3>
+      <p class="price">$0.25</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/piña.png" alt="Piña">
+      <h3>Piña</h3>
+      <p class="price">$1.20</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/fresa.webp" alt="Fresa">
+      <h3>Fresa</h3>
+      <p class="price">$0.10</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+  </main>
+
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCKge8YEmt9qHUh8BE8ch0Q6vf_hYOtakY",
+    authDomain: "comercial-mafer.firebaseapp.com",
+    projectId: "comercial-mafer",
+    storageBucket: "comercial-mafer.firebasestorage.app",
+    messagingSenderId: "732849265427",
+    appId: "1:732849265427:web:86960381af140f33d258e6",
+    measurementId: "G-F4G16F8SNR"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
