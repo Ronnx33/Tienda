@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snacks | Mafer's</title>
+  <link rel="stylesheet" href="snacks.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <h1><i class="fa-solid fa-cookie-bite"></i> Lo mejor para tus  comidas</h1>
+    <p>¡Encuentra tus productos favoritos a los mejores precios!</p>
+  </header>
+
+  <main class="product-grid">
+    <div class="product-card">
+      <img src="img/tallarines.jpeg" alt="Tallarines">
+      <h3>Tallarin Oriental</h3>
+      <p class="price">$2.50</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/sal.jpeg" alt="Sal de cocina">
+      <h3>Cris-Sal</h3>
+      <p class="price">$2.00</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/azucar.jpeg" alt="Azucar Valdez">
+      <h3>Azúcar Valdez</h3>
+      <p class="price">$1.20</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/arroz.jpeg" alt="Arroz">
+      <h3>Arroz rendidor</h3>
+      <p class="price">$0.90</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/atun.jpeg" alt="Atún real">
+      <h3>Atún real</h3>
+      <p class="price">$1.00</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/lenteja.jpeg" alt="Lenteja">
+      <h3>Lenteja</h3>
+      <p class="price">$1.10</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+    <div class="product-card">
+      <img src="img/avena.jpeg" alt="Avena Quaker">
+      <h3>Avena Quaker</h3>
+      <p class="price">$0.50</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+       <div class="product-card">
+      <img src="img/canguil.jpeg" alt="Canguil">
+      <h3>Canguil original</h3>
+      <p class="price">$0.50</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+       <div class="product-card">
+      <img src="img/fideos.jpeg" alt="Fideos">
+      <h3>Fideos Toscana</h3>
+      <p class="price">$0.50</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+       <div class="product-card">
+      <img src="img/aliño.jpeg" alt="Aliño">
+      <h3>Aliño M</h3>
+      <p class="price">$0.50</p>
+      <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+    </div>
+
+  </main>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCKge8YEmt9qHUh8BE8ch0Q6vf_hYOtakY",
+    authDomain: "comercial-mafer.firebaseapp.com",
+    projectId: "comercial-mafer",
+    storageBucket: "comercial-mafer.firebasestorage.app",
+    messagingSenderId: "732849265427",
+    appId: "1:732849265427:web:86960381af140f33d258e6",
+    measurementId: "G-F4G16F8SNR"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
