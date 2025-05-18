@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Productos | Mafer's</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fefaf6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    
+    .header {
+      background: linear-gradient(90deg, #ff6f00, #ffa726);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+    
+    .header p {
+      margin-top: 8px;
+      font-size: 1.1rem;
+    }
+    
+    .main-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    
+    .vertical-nav {
+      width: 250px;
+      background: #fff;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+    
+    .filter-section {
+      margin-bottom: 20px;
+    }
+    
+    .filter-section h3 {
+      color: #e65100;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+    
+    .filter-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 8px;
+      background: #f5f5f5;
+      border: none;
+      border-radius: 5px;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .filter-btn:hover {
+      background: #ffcc80;
+    }
+    
+    .filter-btn.active {
+      background: #e0ae88;
+      color: white;
+    }
+    
+    .products-section {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .product-card {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #333;
+    }
+    
+    .price {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #ff6f00;
+      margin-bottom: 12px;
+    }
+    
+    .product-card button {
+      background: #e65100;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .product-card button:hover {
+      background: #bf360c;
+    }
+    
+    .no-products {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1><i class="fa-solid fa-cookie-bite"></i> La mejor calidad de productos la encuentras aqui</h1>
+    <p>¡Encuentra tus productos favoritos a los mejores precios!</p>
+  </header>
+
+  <div class="main-container">
+    <!-- Navegador vertical con filtros -->
+    <nav class="vertical-nav">
+      <div class="filter-section">
+        <h3>Categorías</h3>
+        <button class="filter-btn active" data-category="all"><i class="fas fa-utensils"></i> Todos los productos</button>
+        <button class="filter-btn" data-category="bebidas"><i class="fas fa-wine-bottle"></i> Bebidas</button>
+        <button class="filter-btn" data-category="snacks"><i class="fas fa-cookie"></i> Snacks</button>
+        <button class="filter-btn" data-category="limpieza"><i class="fas fa-broom"></i> Limpieza</button>
+        <button class="filter-btn" data-category="frutas-verduras"><i class="fas fa-apple-alt"></i> Frutas-verduras</button>
+        <button class="filter-btn" data-category="abarrotes"><i class="fas fa-shopping-basket"></i> Abarrotes</button>
+      </div>
+      
+      <div class="filter-section">
+        <h3>Precio</h3>
+        <button class="filter-btn" data-price="all"><i class="fas fa-dollar-sign"></i> Todos los precios</button>
+        <button class="filter-btn" data-price="0-1"><i class="fas fa-dollar-sign"></i> Menos de $1</button>
+        <button class="filter-btn" data-price="1-2"><i class="fas fa-dollar-sign"></i> $1 - $2</button>
+        <button class="filter-btn" data-price="2+"><i class="fas fa-dollar-sign"></i> Más de $2</button>
+      </div>
+    </nav>
+
+    <!-- Sección de productos (scrollable) -->
+    <section class="products-section">
+      <div class="product-grid" id="product-container">
+        <!-- Los productos se cargarán dinámicamente aquí -->
+      </div>
+    </section>
+  </div>
+  
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.7.1/firebase-analytics.js";
+    
+    // Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyCKge8YEmt9qHUh8BE8ch0Q6vf_hYOtakY",
+      authDomain: "comercial-mafer.firebaseapp.com",
+      projectId: "comercial-mafer",
+      storageBucket: "comercial-mafer.firebasestorage.app",
+      messagingSenderId: "732849265427",
+      appId: "1:732849265427:web:86960381af140f33d258e6",
+      measurementId: "G-F4G16F8SNR"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    
+    // Datos de productos (simulando una base de datos)
+    const products = [
+      // Bebidas
+      { id: 1, name: "Coca Cola 1.5L", price: 1.80, category: "bebidas", image: "img/cocacola.png" },
+      { id: 2, name: "Jugo Hit Mango 1L", price: 1.20, category: "bebidas", image: "img/jugo.png" },
+      { id: 3, name: "Agua Cristal 600ml", price: 0.90, category: "bebidas", image: "img/agua.png" },
+      { id: 4, name: "Gatorade Uva 500ml", price: 1.50, category: "bebidas", image: "img/gatorade.png" },
+      { id: 5, name: "Red Bull 250ml", price: 2.10, category: "bebidas", image: "img/red.png" },
+      { id: 6, name: "Té Hatsu Durazno", price: 1.80, category: "bebidas", image: "img/te.png" },
+      { id: 7, name: "Postobón Manzana 1.5L", price: 2.10, category: "bebidas", image: "img/manzana.png" },
+      { id: 8, name: "Pepsi 1.5L", price: 2.10, category: "bebidas", image: "img/pepsi.png" },
+      
+      // Snacks
+      { id: 9, name: "Pringles Original", price: 2.50, category: "snacks", image: "img/pringles.png" },
+      { id: 10, name: "Doritos Queso 150g", price: 2.00, category: "snacks", image: "img/doritos.png" },
+      { id: 11, name: "Chocoramo", price: 1.20, category: "snacks", image: "img/chocoramo.png" },
+      { id: 12, name: "Galletas Festival", price: 0.90, category: "snacks", image: "img/galletas.png" },
+      { id: 13, name: "Manimoto Picante", price: 1.00, category: "snacks", image: "img/manimoto.png" },
+      { id: 14, name: "Cheetos Bolitas", price: 1.10, category: "snacks", image: "img/cheetos.png" },
+      { id: 15, name: "Chocolate Jet", price: 0.50, category: "snacks", image: "img/chocolate.png" },
+      { id: 16, name: "Papitas Margarita BBQ", price: 1.30, category: "snacks", image: "img/papitas.png" },
+      
+      // Limpieza
+      { id: 17, name: "Jabón Líquido 1L", price: 2.80, category: "limpieza", image: "img/jabon.png" },
+      { id: 18, name: "Cloro Multiusos", price: 1.90, category: "limpieza", image: "img/cloro.png" },
+      { id: 19, name: "Detergente en Polvo 500g", price: 1.70, category: "limpieza", image: "img/detergente.png" },
+      { id: 20, name: "Trapeador Reforzado", price: 3.50, category: "limpieza", image: "img/trapeador.png" },
+      { id: 21, name: "Escoba Plástica", price: 2.20, category: "limpieza", image: "img/escoba.png" },
+      { id: 22, name: "Desinfectante Floral", price: 2.00, category: "limpieza", image: "img/desinfectante.png" },
+      { id: 23, name: "Guantes de Limpieza", price: 1.30, category: "limpieza", image: "img/guantes.png" },
+      { id: 24, name: "Toallas Húmedas (x50)", price: 1.60, category: "limpieza", image: "img/toallas.png" },
+      
+          // Frutas y verduras
+      { id: 25, name: "Banano", price: 2.80, category: "frutas-verduras", image: "img/banano.jpeg" },
+      { id: 26, name: "Mora", price: 1.90, category: "frutas-verduras", image: "img/mora.jpeg" },
+      { id: 27, name: "Manzana", price: 1.90, category: "frutas-verduras", image: "img/manzana.jpeg" },
+      { id: 28, name: "Col", price: 1.00, category: "frutas-verduras", image: "img/col.jpeg" },
+      { id: 29, name: "Peras", price: 1.50, category: "frutas-verduras", image: "img/peras.jpeg" },
+      { id: 30, name: "Uvas", price: 2.00, category: "frutas-verduras", image: "img/uvas.jpeg" },
+      { id: 31, name: "Cilandro", price: 1.30, category: "frutas-verduras", image: "img/cilandro.jpeg" },
+      { id: 32, name: "Brocoli", price: 1.60, category: "frutas-verduras", image: "img/brocoli.jpeg" },
+          // Abarrotes
+      { id: 33, name: "Aceite la favorita 1L", price: 2.00, category: "abarrotes", image: "img/aceite.jpeg" },
+      { id: 34, name: "Cloro Multiusos", price: 1.90, category: "limpieza", image: "img/cloro.png" },
+      { id: 35, name: "Detergente en Polvo 500g", price: 1.70, category: "limpieza", image: "img/detergente.png" },
+      { id: 36, name: "Trapeador Reforzado", price: 3.50, category: "limpieza", image: "img/trapeador.png" },
+      { id: 37, name: "Escoba Plástica", price: 2.20, category: "limpieza", image: "img/escoba.png" },
+      { id: 38, name: "Desinfectante Floral", price: 2.00, category: "limpieza", image: "img/desinfectante.png" },
+      { id: 39, name: "Guantes de Limpieza", price: 1.30, category: "limpieza", image: "img/guantes.png" },
+      { id: 40, name: "Toallas Húmedas (x50)", price: 1.60, category: "limpieza", image: "img/toallas.png" },
+    ];
+    
+    // Variables para los filtros actuales
+    let currentCategory = "all";
+    let currentPriceRange = "all";
+    
+    // Función para renderizar productos según los filtros
+    function renderProducts() {
+      const productContainer = document.getElementById('product-container');
+      productContainer.innerHTML = '';
+      
+      // Filtrar productos
+      const filteredProducts = products.filter(product => {
+        // Filtrar por categoría
+        const categoryMatch = currentCategory === 'all' || product.category === currentCategory;
+        
+        // Filtrar por rango de precio
+        let priceMatch = true;
+        if (currentPriceRange !== 'all') {
+          switch(currentPriceRange) {
+            case '0-1': priceMatch = product.price < 1; break;
+            case '1-2': priceMatch = product.price >= 1 && product.price <= 2; break;
+            case '2+': priceMatch = product.price > 2; break;
+          }
+        }
+        
+        return categoryMatch && priceMatch;
+      });
+      
+      // Mostrar productos filtrados o mensaje si no hay resultados
+      if (filteredProducts.length === 0) {
+        productContainer.innerHTML = '<div class="no-products"><h3>No se encontraron productos con estos filtros</h3><p>Intenta con otros criterios de búsqueda</p></div>';
+      } else {
+        filteredProducts.forEach(product => {
+          const productCard = document.createElement('div');
+          productCard.className = 'product-card';
+          productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p class="price">$${product.price.toFixed(2)}</p>
+            <button><i class="fas fa-shopping-cart"></i> Comprar</button>
+          `;
+          productContainer.appendChild(productCard);
+        });
+      }
+    }
+    
+    // Función para manejar los filtros de categoría
+    function setupCategoryFilters() {
+      document.querySelectorAll('.filter-section:first-child .filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Remover clase active de todos los botones de categoría
+          document.querySelectorAll('.filter-section:first-child .filter-btn').forEach(b => b.classList.remove('active'));
+          // Agregar clase active al botón clickeado
+          this.classList.add('active');
+          
+          // Actualizar filtro de categoría
+          currentCategory = this.dataset.category;
+          renderProducts();
+        });
+      });
+    }
+    
+    // Función para manejar los filtros de precio
+    function setupPriceFilters() {
+      document.querySelectorAll('.filter-section:nth-child(2) .filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          // Remover clase active de todos los botones de precio
+          document.querySelectorAll('.filter-section:nth-child(2) .filter-btn').forEach(b => b.classList.remove('active'));
+          // Agregar clase active al botón clickeado
+          this.classList.add('active');
+          
+          // Actualizar filtro de precio
+          currentPriceRange = this.dataset.price;
+          renderProducts();
+        });
+      });
+    }
+    
+    // Inicializar la página
+    function init() {
+      // Configurar eventos de los filtros
+      setupCategoryFilters();
+      setupPriceFilters();
+      
+      // Renderizar todos los productos al inicio
+      renderProducts();
+    }
+    
+    // Ejecutar cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
